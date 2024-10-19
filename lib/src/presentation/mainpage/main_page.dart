@@ -37,6 +37,19 @@ class _MainPageState extends State<MainPage> {
     return SafeArea(
         child: Scaffold(
             bottomNavigationBar: BottomNavigationBar(
+                            currentIndex: _selectedIndex,
+              elevation: 1,
+              type: BottomNavigationBarType.fixed,
+              unselectedItemColor: Colors.grey,
+              unselectedIconTheme: const IconThemeData(
+                color: Colors.grey,
+              ),
+              backgroundColor: backgroundColor,
+
+              selectedIconTheme: const IconThemeData(color: Colors.white),
+              selectedItemColor: Colors.white,
+              onTap: _onItemTapped,
+
               items: const [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.home), label: "Home"),
@@ -50,20 +63,6 @@ class _MainPageState extends State<MainPage> {
                     icon: Icon(Icons.arrow_circle_down_rounded),
                     label: "Downloads"),
               ],
-
-
-              currentIndex: _selectedIndex,
-              elevation: 1,
-              type: BottomNavigationBarType.fixed,
-              unselectedItemColor: Colors.grey,
-              unselectedIconTheme: const IconThemeData(
-                color: Colors.grey,
-              ),
-              backgroundColor: backgroundColor,
-
-              selectedIconTheme: const IconThemeData(color: Colors.white),
-              selectedItemColor: Colors.white,
-              onTap: _onItemTapped,
 
             ),            body: screens[_selectedIndex],
 
