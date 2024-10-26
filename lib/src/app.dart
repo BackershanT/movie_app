@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/src/presentation/mainpage/main_page.dart';
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -9,11 +10,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(backgroundColor: Colors.transparent),
           primarySwatch: Colors.blue,
-          scaffoldBackgroundColor: Colors.black,
-          textTheme: const TextTheme(
-              // bodyLarge:TextStyle(color: Colors.white)
+          scaffoldBackgroundColor: Colors.grey,
+          textTheme:  TextTheme(
 
               )),
       home:  MainPage(),
