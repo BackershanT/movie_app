@@ -1,4 +1,5 @@
 # movie_app
+
 flutter project using bloc using apis
 
 *project structure
