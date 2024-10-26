@@ -9,3 +9,11 @@ flutter project using bloc using apis
 *constants (height,radius ,width)
 
 **project structure
+  --lib
+  ---src
+  ----core
+  -----color
+  ----presentation
+  -----pages
+  ------Screens
+  ------Widgets
