@@ -14,3 +14,5 @@ const kheight =SizedBox(
 const kheight20 =SizedBox(
   height: 20,
 );
+
+const borderRadius =BorderRadius.circular(20);
