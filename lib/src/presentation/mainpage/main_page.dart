@@ -29,8 +29,8 @@ class MainPage extends StatelessWidget {
       body: ValueListenableBuilder(
         valueListenable: indexChangeNotifier,
         builder: (context, int index, _) {
-          print(_pages);
-          print(index);print(_pages[index]);
+          // print(_pages);
+          // print(index);print(_pages[index]);
 
           return _pages[index];
         },

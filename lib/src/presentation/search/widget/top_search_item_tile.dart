@@ -19,9 +19,9 @@ class TopSearchItemTile extends StatelessWidget {
                 image: NetworkImage(imageUrl))
           ),
         ),
-        Expanded(child:
+        const Expanded(child:
         Text("moviename",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),)),
-        Icon(CupertinoIcons.play_circle,size: 50,)
+        const Icon(CupertinoIcons.play_circle,size: 50,)
       ],
     );
   }

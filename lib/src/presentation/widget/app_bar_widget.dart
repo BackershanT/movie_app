@@ -13,14 +13,14 @@ class AppBarWidget extends StatelessWidget {
         kWidth,
         Text(
           title,
-          style:TextStyle(
+          style:const TextStyle(
           // GoogleFonts.montserrat(
             fontWeight: FontWeight.bold,
             fontSize: 30
           )
         ),
-        Spacer(),
-        Icon(Icons.cast,size: 30,),
+        const Spacer(),
+        const Icon(Icons.cast,size: 30,),
         kWidth,
         Container(
           color: Colors.blue,

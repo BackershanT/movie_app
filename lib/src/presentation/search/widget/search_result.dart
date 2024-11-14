@@ -20,7 +20,7 @@ class SearchResult extends StatelessWidget {
 
         Expanded(
             child:
-            Container(
+            SizedBox(
         child: GridView.count(
               childAspectRatio: 1/1.4,
           mainAxisSpacing: 5,

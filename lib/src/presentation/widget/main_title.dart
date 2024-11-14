@@ -6,8 +6,8 @@ class MainTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.all(10),child:
-      Text(title,style: TextStyle(
+    return Padding(padding: const EdgeInsets.all(10),child:
+      Text(title,style: const TextStyle(
       fontSize: 22,
       fontWeight: FontWeight.bold
     ),));

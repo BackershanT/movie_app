@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class DownloadImages extends StatelessWidget {
-   DownloadImages({super.key,  required this.imageList, required this.angle, required this.margin, required this.size});
+   const DownloadImages({super.key,  required this.imageList, required this.angle, required this.margin, required this.size});
 final String imageList;
 final double angle;
 final EdgeInsets margin;
