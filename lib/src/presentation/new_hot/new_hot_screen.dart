@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/src/core/constants.dart';
 import 'package:movie_app/src/presentation/new_hot/widgets/comingSoon.dart';
 import 'package:movie_app/src/presentation/new_hot/widgets/everyone%20watchin.dart';
-import 'package:movie_app/src/presentation/widget/app_bar_widget.dart';
+// import 'package:movie_app/src/presentation/widget/app_bar_widget.dart';
 
 class NewHotScreen extends StatelessWidget {
   const NewHotScreen({super.key});
@@ -34,19 +34,19 @@ class NewHotScreen extends StatelessWidget {
                     kWidth,
                   ],
                   bottom: TabBar(
-                      labelStyle:
-                          const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                      labelStyle: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.bold),
                       labelColor: Colors.black,
                       isScrollable: true,
                       unselectedLabelColor: Colors.white,
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white),
-                      tabs: [
-                        const Tab(
+                      tabs: const [
+                        Tab(
                           text: ":)coming soon",
                         ),
-                        const Tab(
+                        Tab(
                           text: ":)Everyone watching",
                         ),
                       ]),
@@ -71,7 +71,8 @@ class NewHotScreen extends StatelessWidget {
   Widget _buildEveryoneWatching() {
     return ListView.builder(
       itemCount: 10,
-      itemBuilder: (BuildContext context, index) => const EveryoneWatchingWidget(),
+      itemBuilder: (BuildContext context, index) =>
+          const EveryoneWatchingWidget(),
       // shrinkWrap: true,
       // children: [
       //   ComingsoonWidget()

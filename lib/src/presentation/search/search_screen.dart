@@ -29,14 +29,11 @@ class SearchScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
 
-              Expanded(child:
-              SearchIdle()),
+              Expanded(child: SearchIdle()),
 
-              Expanded(child:
-              SearchResult()),
+              Expanded(child: SearchResult()),
 
               // SearchResult(),
-
             ],
           )),
     ));

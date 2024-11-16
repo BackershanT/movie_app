@@ -9,13 +9,11 @@ class FirstLaughScreen extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: PageView(
-
-              scrollDirection: Axis.vertical,
-      children:
-        List.generate(10, (index) {
-          return VedioListItem(index: index,);
-        })
-
-    )));
+                scrollDirection: Axis.vertical,
+                children: List.generate(10, (index) {
+                  return VedioListItem(
+                    index: index,
+                  );
+                }))));
   }
 }

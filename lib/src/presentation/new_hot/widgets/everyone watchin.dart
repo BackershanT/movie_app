@@ -16,7 +16,8 @@ class EveryoneWatchingWidget extends StatelessWidget {
         kheight,
         const Text(
             "fdjknszudfnosndnfnvzdonfvindfonvinfoidnv odfnivniodnfxviondiofnvoidfv jdnfxiovniodsnmxofinviodnfioxvniofndv osdfnmiovniosndfxviondfo osdnvioiniondficvr sojdxn von foxc"),
-        kheight,SizedBox(
+        kheight,
+        SizedBox(
           width: double.infinity,
           height: 200,
           child: Image.network(
@@ -24,28 +25,24 @@ class EveryoneWatchingWidget extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        const Row(mainAxisAlignment: MainAxisAlignment.end,
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Column(
-              children: [
-                Icon(Icons.share),
-                Text("Share")
-              ],
-            ),kWidth20,  Column(
-              children: [
-                Icon(Icons.add),
-                Text("My list")
-              ],
-            ),kWidth20,
+              children: [Icon(Icons.share), Text("Share")],
+            ),
+            kWidth20,
             Column(
-              children: [
-                Icon(Icons.play_arrow_outlined),
-                Text("Play")
-              ],
-            ),kWidth20
-
+              children: [Icon(Icons.add), Text("My list")],
+            ),
+            kWidth20,
+            Column(
+              children: [Icon(Icons.play_arrow_outlined), Text("Play")],
+            ),
+            kWidth20
           ],
         )
       ],
-    );  }
+    );
+  }
 }

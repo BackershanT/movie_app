@@ -17,12 +17,10 @@ class SearchResult extends StatelessWidget {
           ),
         ),
         kheight,
-
         Expanded(
-            child:
-            SizedBox(
-        child: GridView.count(
-              childAspectRatio: 1/1.4,
+            child: SizedBox(
+                child: GridView.count(
+          childAspectRatio: 1 / 1.4,
           mainAxisSpacing: 5,
           crossAxisSpacing: 5,
           shrinkWrap: true,

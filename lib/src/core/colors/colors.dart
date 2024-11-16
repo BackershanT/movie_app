@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
 
-const backgroundColor =  Colors.black;
-const kWhiteColor=  Colors.white ;
+const backgroundColor = Colors.black;
+const kWhiteColor = Colors.white;

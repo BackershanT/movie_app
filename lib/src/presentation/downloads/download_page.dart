@@ -7,7 +7,7 @@ import 'package:movie_app/src/presentation/downloads/widgets/download_images.dar
 import 'package:movie_app/src/presentation/widget/app_bar_widget.dart';
 
 class DownloadPage extends StatelessWidget {
-  DownloadPage({super.key});
+  const DownloadPage({super.key});
 
   // final List ImageList = [
   //   "https://images-cdn.ubuy.ae/634fa5a3884d9347417c7d33-movie-poster-action-fantasy-movie-shadow.jpg",
@@ -17,9 +17,9 @@ class DownloadPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_){
-      BlocProvider.of<DownloadsBloc>(context).add( DownloadsEvent.getDownloadsImage());
-
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context)
+          .add(const DownloadsEvent.getDownloadsImage());
     });
 
     // BlocProvider.of<DownloadsBloc>(context)

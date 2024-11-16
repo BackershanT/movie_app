@@ -1,6 +1,6 @@
 import 'package:movie_app/src/core/strings.dart';
 import 'package:movie_app/src/infrastructure/api_key.dart';
 
-class ApiEndPoints{
+class ApiEndPoints {
   static const downloads = "$kBaseUrl/trending/all/day?api_key=$apiKey# ";
 }
