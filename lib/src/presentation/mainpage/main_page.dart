@@ -15,7 +15,7 @@ class MainPage extends StatelessWidget {
     const FirstLaughScreen(),
     const SearchScreen(),
 
-    DownloadPage(),
+    const DownloadPage(),
 
     // FirstLaughScreen(),
     // SearchScreen(),
