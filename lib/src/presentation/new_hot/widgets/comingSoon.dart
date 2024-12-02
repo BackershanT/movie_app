@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/src/core/constants.dart';
 
 class ComingsoonWidget extends StatelessWidget {
-  const ComingsoonWidget({super.key, });
+  const ComingsoonWidget({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return         Row(
+    return Row(
       children: [
         const SizedBox(
           width: 80,
@@ -39,8 +41,7 @@ class ComingsoonWidget extends StatelessWidget {
           width: size.width - 80,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start
-            ,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -97,15 +98,24 @@ class ComingsoonWidget extends StatelessWidget {
                   )
                 ],
               ),
-              const Text("coming soon",style: TextStyle(fontSize: 20),),kheight,
-              const Text("Taall girl 2",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+              const Text(
+                "coming soon",
+                style: TextStyle(fontSize: 20),
+              ),
               kheight,
-              const Text("djfnikd fskodzmskldmf efdsmzkxklsmdf slkldfmlsm.dfkl sdjfjmlksmfxdlv jsdlfnsmdzflk kjlnzdfxkcmsdlx slzdfx,nvkldsn.zxv lsdnflvnslkdvx lk ldnfvln dsxkln fvkldskfmklsmdfl ksdfm;lsmdf;l dfsklms;md fks dkf sk dfks dfk sdkf ksedf ksd fk dskf ks dfkl sdk fks dfvk dfk kdf odfkxn vl df vkldf xklv d v vojd oj voj ojadfkomlksmdflk asfldfzkxmsdfk.m  2",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),)
+              const Text(
+                "Taall girl 2",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              kheight,
+              const Text(
+                "djfnikd fskodzmskldmf efdsmzkxklsmdf slkldfmlsm.dfkl sdjfjmlksmfxdlv jsdlfnsmdzflk kjlnzdfxkcmsdlx slzdfx,nvkldsn.zxv lsdnflvnslkdvx lk ldnfvln dsxkln fvkldskfmklsmdfl ksdfm;lsmdf;l dfsklms;md fks dkf sk dfks dfk sdkf ksedf ksd fk dskf ks dfkl sdk fks dfvk dfk kdf odfkxn vl df vkldf xklv d v vojd oj voj ojadfkomlksmdflk asfldfzkxmsdfk.m  2",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              )
             ],
           ),
         ),
       ],
     );
-
   }
 }

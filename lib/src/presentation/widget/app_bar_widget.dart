@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/src/core/constants.dart';
 
-
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key, required this.title});
   final String title;
@@ -11,16 +10,16 @@ class AppBarWidget extends StatelessWidget {
     return Row(
       children: [
         kWidth,
-        Text(
-          title,
-          style:const TextStyle(
-          // GoogleFonts.montserrat(
-            fontWeight: FontWeight.bold,
-            fontSize: 30
-          )
-        ),
+        Text(title,
+            style: const TextStyle(
+                // GoogleFonts.montserrat(
+                fontWeight: FontWeight.bold,
+                fontSize: 30)),
         const Spacer(),
-        const Icon(Icons.cast,size: 30,),
+        const Icon(
+          Icons.cast,
+          size: 30,
+        ),
         kWidth,
         Container(
           color: Colors.blue,
