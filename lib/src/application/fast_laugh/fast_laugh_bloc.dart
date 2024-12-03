@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:movie_app/src/domain/downloads/i_download_repo.dart';
@@ -8,12 +9,14 @@ part 'fast_laugh_event.dart';
 part 'fast_laugh_state.dart';
 part 'fast_laugh_bloc.freezed.dart';
 
-final _vedioUrls = [
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+final dummyVideoUrls = [
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
 ];
+
+ValueNotifier<Set<int>>likedVideosNotifier =ValueNotifier({});
 
 @injectable
 class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
@@ -21,13 +24,39 @@ class FastLaughBloc extends Bloc<FastLaughEvent, FastLaughState> {
     IDownloadRepo _downloadService,
   ) : super(FastLaughState.initial()) {
     on<Initialize>((event, emit) async {
-      emit(const FastLaughState(videoList: [], isLoading: true, isError: false));
+      emit(FastLaughState(
+          videoList: [],
+          isLoading: true,
+          isError: false,
+          // likedVideoListIds: []
+      ));
       final _result = await _downloadService.getDownloadimages();
       final _state = _result.fold((l) {
-        return const FastLaughState(videoList: [], isLoading: false, isError: true);
-      }, (r) => FastLaughState(videoList: r, isLoading: false, isError: false));
+        return FastLaughState(
+            videoList: [],
+            isLoading: false,
+            isError: true,
+            // likedVideoListIds: []
+            );
+      },
+          (r) => FastLaughState(
+              videoList: r,
+              isLoading: false,
+              isError: false,
+              // likedVideoListIds: state.likedVideoListIds
+          ));
       emit(_state);
       print(_result);
+    });
+
+    on<LikeVideo>((event, emit) async {
+likedVideosNotifier.value.add(event.id);
+      // emit(state.copyWith(likedVideoListIds: list));
+    });
+    on<UnLikeVideo>((event, emit) async {
+      likedVideosNotifier.value.remove(event.id);
+
+      // emit(state.copyWith(likedVideoListIds: list));
     });
   }
 }
