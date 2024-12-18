@@ -59,7 +59,7 @@ class NewHotScreen extends StatelessWidget {
 
   Widget _buildComingSoon() {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: 5,
       itemBuilder: (BuildContext context, index) => const ComingsoonWidget(),
       // shrinkWrap: true,
       // children: [
