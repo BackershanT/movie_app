@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Maincard extends StatelessWidget {
   final String imageUrl;
   const Maincard({super.key, required this.imageUrl});
@@ -11,7 +10,7 @@ class Maincard extends StatelessWidget {
       height: 100,
       width: 100,
       decoration: BoxDecoration(
-          image:  DecorationImage(
+          image: DecorationImage(
             image: NetworkImage(imageUrl),
           ),
           borderRadius: BorderRadius.circular(10)),

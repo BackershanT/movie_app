@@ -41,7 +41,7 @@ class SearchScreen extends StatelessWidget {
                     BlocProvider.of<SearchBloc>(context)
                         .add(SearchMovie(movieQuery: value));
                   });
-                  print(value);
+                  // print(value);
                 },
               ),
 
