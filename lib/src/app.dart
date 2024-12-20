@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/src/application/downloads/downloads_bloc.dart';
 import 'package:movie_app/src/application/fast_laugh/fast_laugh_bloc.dart';
+import 'package:movie_app/src/application/home_bloc/home_bloc.dart';
+import 'package:movie_app/src/application/hotand_new_bloc.dart';
 import 'package:movie_app/src/application/search/search_bloc.dart';
 import 'package:movie_app/src/domain/core/di/injectable.dart';
 import 'package:movie_app/src/presentation/mainpage/main_page.dart';
@@ -16,7 +18,9 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (ctx) => getIt<DownloadsBloc>()),
           BlocProvider(create: (ctx) => getIt<SearchBloc>()),
-          BlocProvider(create: (ctx) => getIt<FastLaughBloc>())
+          BlocProvider(create: (ctx) => getIt<FastLaughBloc>()),
+          BlocProvider(create: (ctx) => getIt<HotandNewBloc>()),
+          BlocProvider(create: (ctx) => getIt<HomeBloc>())
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

@@ -8,14 +8,18 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../../application/downloads/downloads_bloc.dart' as _i8;
-import '../../../application/fast_laugh/fast_laugh_bloc.dart' as _i9;
-import '../../../application/search/search_bloc.dart' as _i7;
+import '../../../application/downloads/downloads_bloc.dart' as _i10;
+import '../../../application/fast_laugh/fast_laugh_bloc.dart' as _i11;
+import '../../../application/home_bloc/home_bloc.dart' as _i12;
+import '../../../application/hotand_new_bloc.dart' as _i13;
+import '../../../application/search/search_bloc.dart' as _i9;
 import '../../../infrastructure/downloads/downloads_repository.dart' as _i4;
-import '../../../infrastructure/search/search_repository.dart' as _i6;
+import '../../../infrastructure/hot_and_new/hot_and_new_repository.dart' as _i6;
+import '../../../infrastructure/search/search_repository.dart' as _i8;
 import '../../downloads/i_download_repo.dart' as _i3;
+import '../../hot_and_new/hot_new_resp/i_hot_new_repo.dart' as _i5;
 import '../../search/i_search_repo.dart'
-    as _i5; // ignore_for_file: unnecessary_lambdas
+    as _i7; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -30,14 +34,18 @@ _i1.GetIt $initGetIt(
     environmentFilter,
   );
   gh.lazySingleton<_i3.IDownloadRepo>(() => _i4.DownloadsRepository());
-  gh.lazySingleton<_i5.ISearchRepo>(() => _i6.SearchImpl());
-  gh.factory<_i7.SearchBloc>(() => _i7.SearchBloc(
+  gh.lazySingleton<_i5.IHotNewRepo>(() => _i6.HotAndNewRepository());
+  gh.lazySingleton<_i7.ISearchRepo>(() => _i8.SearchImpl());
+  gh.factory<_i9.SearchBloc>(() => _i9.SearchBloc(
         get<_i3.IDownloadRepo>(),
-        get<_i5.ISearchRepo>(),
+        get<_i7.ISearchRepo>(),
       ));
-  gh.factory<_i8.DownloadsBloc>(
-      () => _i8.DownloadsBloc(get<_i3.IDownloadRepo>()));
-  gh.factory<_i9.FastLaughBloc>(
-      () => _i9.FastLaughBloc(get<_i3.IDownloadRepo>()));
+  gh.factory<_i10.DownloadsBloc>(
+      () => _i10.DownloadsBloc(get<_i3.IDownloadRepo>()));
+  gh.factory<_i11.FastLaughBloc>(
+      () => _i11.FastLaughBloc(get<_i3.IDownloadRepo>()));
+  gh.factory<_i12.HomeBloc>(() => _i12.HomeBloc(get<_i5.IHotNewRepo>()));
+  gh.factory<_i13.HotandNewBloc>(
+      () => _i13.HotandNewBloc(get<_i5.IHotNewRepo>()));
   return get;
 }

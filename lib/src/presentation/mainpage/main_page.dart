@@ -9,11 +9,11 @@ import 'package:movie_app/src/presentation/search/search_screen.dart';
 class MainPage extends StatelessWidget {
   MainPage({super.key});
   final _pages = [
-    const HomeScreen(),
+     HomeScreen(index: 0,),
     const NewHotScreen(),
 
     const FirstLaughScreen(),
-     SearchScreen(),
+    SearchScreen(),
 
     const DownloadPage(),
 

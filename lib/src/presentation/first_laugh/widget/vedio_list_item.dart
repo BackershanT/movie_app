@@ -84,7 +84,6 @@ class VedioListItem extends StatelessWidget {
                                 likedVideosNotifier.value.add(_index);
                                 likedVideosNotifier.notifyListeners();
 
-
                                 // BlocProvider.of<FastLaughBloc>(context)
                                 //     .add(LikeVideo(id: _index));
                               },

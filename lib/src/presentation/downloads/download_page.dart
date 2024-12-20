@@ -9,8 +9,6 @@ import 'package:movie_app/src/presentation/widget/app_bar_widget.dart';
 class DownloadPage extends StatelessWidget {
   const DownloadPage({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -52,9 +50,8 @@ class DownloadPage extends StatelessWidget {
                       width: size.width,
                       height: size.width,
                       child: state.isLoading
-                          ? const Center(child: CircularProgressIndicator()
-                      ) :
-                      Stack(
+                          ? const Center(child: CircularProgressIndicator())
+                          : Stack(
                               alignment: Alignment.center,
                               children: [
                                 Center(

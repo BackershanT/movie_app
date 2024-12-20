@@ -51,7 +51,8 @@ class SearchIdle extends StatelessWidget {
                   },
                   separatorBuilder: (ctx, index) => kheight20,
                   itemCount: state.idleList.length);
-            }  },
+            }
+          },
         ))
       ],
     );

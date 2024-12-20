@@ -1,28 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/src/core/const.dart';
 import 'package:movie_app/src/core/constants.dart';
 
 class EveryoneWatchingWidget extends StatelessWidget {
-  const EveryoneWatchingWidget({super.key});
+  final String posterPath;
+  final String movieName;
+  final String description;
+  const EveryoneWatchingWidget(
+      {super.key,
+      required this.posterPath,
+      required this.movieName,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: 10,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Friends",
+        Text(
+          movieName,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         kheight,
-        const Text(
-            "fdjknszudfnosndnfnvzdonfvindfonvinfoidnv odfnivniodnfxviondiofnvoidfv jdnfxiovniodsnmxofinviodnfioxvniofndv osdfnmiovniosndfxviondfo osdnvioiniondficvr sojdxn von foxc"),
+        Text(description),
         kheight,
         SizedBox(
           width: double.infinity,
           height: 200,
           child: Image.network(
-            "https://m.media-amazon.com/images/I/61S+YHHA6xL._AC_UF1000,1000_QL80_.jpg",
+            "$imageAppendUrl$posterPath",
             fit: BoxFit.cover,
+            loadingBuilder:
+                (BuildContext _, Widget child, ImageChunkEvent? progress) {
+              if (progress == null) {
+                return child;
+              } else {
+                return Center(
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                  ),
+                );
+              }
+            },
+            errorBuilder: (BuildContext _, Object a, StackTrace? trace) {
+              return Icon(Icons.wifi);
+            },
           ),
         ),
         const Row(

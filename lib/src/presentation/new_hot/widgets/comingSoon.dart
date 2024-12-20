@@ -2,8 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/src/core/constants.dart';
 
 class ComingsoonWidget extends StatelessWidget {
+  final String id;
+  final String month;
+  final String day;
+  final String posterPath;
+  final String movieName;
+  final String description;
+
   const ComingsoonWidget({
     super.key,
+    required this.id,
+    required this.month,
+    required this.day,
+    required this.posterPath,
+    required this.movieName,
+    required this.description,
   });
   @override
   Widget build(BuildContext context) {
@@ -11,27 +24,27 @@ class ComingsoonWidget extends StatelessWidget {
 
     return Row(
       children: [
-        const SizedBox(
+         SizedBox(
           width: 80,
-          height: 500,
+          height: 100,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Feb',
+                month,
                 style: TextStyle(
                     fontSize: 18,
-                    color: Colors.grey,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                '11',
+                day,
                 style: TextStyle(
                     fontSize: 30,
                     letterSpacing: 4,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -48,9 +61,8 @@ class ComingsoonWidget extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    child: Image.network(
+                    child: Image.network(posterPath,
                       fit: BoxFit.cover,
-                      "https://m.media-amazon.com/images/I/61S+YHHA6xL._AC_UF1000,1000_QL80_.jpg",
                     ),
                   ),
                   Positioned(
@@ -69,12 +81,15 @@ class ComingsoonWidget extends StatelessWidget {
                       ))
                 ],
               ),
-              const Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Tall Girl",
+                    movieName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
+
                       fontWeight: FontWeight.bold,
                       fontSize: 40,
                     ),
@@ -99,18 +114,20 @@ class ComingsoonWidget extends StatelessWidget {
                   )
                 ],
               ),
-              const Text(
-                "coming soon",
+               Text(
+                "coming on $day $month",
                 style: TextStyle(fontSize: 20),
               ),
               kheight,
-              const Text(
-                "Taall girl 2",
+               Text(
+                movieName,
+                maxLines: 1,
+    overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
               kheight,
-              const Text(
-                "djfnikd fskodzmskldmf efdsmzkxklsmdf slkldfmlsm.dfkl sdjfjmlksmfxdlv jsdlfnsmdzflk kjlnzdfxkcmsdlx slzdfx,nvkldsn.zxv lsdnflvnslkdvx lk ldnfvln dsxkln fvkldskfmklsmdfl ksdfm;lsmdf;l dfsklms;md fks dkf sk dfks dfk sdkf ksedf ksd fk dskf ks dfkl sdk fks dfvk dfk kdf odfkxn vl df vkldf xklv d v vojd oj voj ojadfkomlksmdflk asfldfzkxmsdfk.m  2",
+               Text(description,
+                maxLines: 4,
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               )
             ],

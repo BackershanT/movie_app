@@ -21,6 +21,7 @@ dependencies:
   json_serializable: null
   video_player: ^2.6.1
   share_plus: ^10.1.2
+  intl:
 
 
 dev_dependencies:

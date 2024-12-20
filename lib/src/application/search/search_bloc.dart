@@ -7,7 +7,6 @@ import 'package:movie_app/src/domain/downloads/models/downloads_model.dart';
 import 'package:movie_app/src/domain/search/i_search_repo.dart';
 import 'package:movie_app/src/domain/search/models/search_respo/search_respo.dart';
 
-
 part 'search_bloc.freezed.dart';
 
 part 'search_event.dart';
@@ -53,9 +52,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       final _result =
           await _searchServices.searchMovies(movieQuery: event.movieQuery);
       final _state = _result.fold((MainFailure f) {
-
         return SearchState(
-
             searchResultList: [],
             idleList: [],
             isLoading: false,

@@ -2,7 +2,9 @@ import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 
 class HomeMainCard extends StatelessWidget {
-  const HomeMainCard({super.key});
+  final String imageUrl;
+
+  const HomeMainCard({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +16,21 @@ class HomeMainCard extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.green,
-              image: const DecorationImage(
+              image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                    "",
+                    imageUrl,
                   ))),
         ));
   }
 }
 
 class HomeMainCardTwo extends StatelessWidget {
-  final int index;
-  const HomeMainCardTwo({super.key, required this.index});
+  const HomeMainCardTwo({
+    super.key,
+    required this.imageUrl,
+  });
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +48,10 @@ class HomeMainCardTwo extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.green,
-                  image: const DecorationImage(
+                  image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                        "",
+                        imageUrl,
                       ))),
             )
           ]),
@@ -57,7 +62,7 @@ class HomeMainCardTwo extends StatelessWidget {
               strokeWidth: 10.0,
               strokeCap: StrokeCap.butt,
               child: Text(
-                "${index + 1}",
+                "1",
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 120,
